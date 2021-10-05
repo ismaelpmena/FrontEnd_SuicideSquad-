@@ -1,26 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Usuarios } from '../interfaces/usuarios';
+import { Cursos } from '../interfaces/cursos';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuariosservicesService {
+export class CursosService {
 
-  usuarios: Usuarios[] = [];
+  cursos: Cursos[] = [];
     // carrito:string[] = [];
     constructor(private http: HttpClient) {
-        this.obtenerUsuarios();
+        this.obtenerCursos();
     }
 
-    private obtenerUsuarios() {
+    private obtenerCursos() {
         this.http.get('../assets/data/productoHombre.json').subscribe((resp: any) => {
-            this.usuarios = resp.usuarios;
+            this.cursos = resp.cursos;
             
             
             
         });
     }
-
-
 }
