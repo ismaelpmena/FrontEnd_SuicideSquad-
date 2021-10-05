@@ -8,6 +8,9 @@ import { RegistroComponent } from './registro/registro.component';
   declarations: [
     RegistroComponent
   ],
+  exports: [
+    RegistroComponent
+  ],
   imports: [
     CommonModule
   ]
