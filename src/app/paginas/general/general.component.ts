@@ -10,13 +10,24 @@ export class GeneralComponent implements OnInit {
 
   constructor(private usuariosservice:UsuariosService) {
 
-    this.usuariosservice.obtenerUsuarios();
-    console.log(" ta funcionando : "+ this.usuariosservice.obtenerUsuarios());
+  //  this.usuariosservice.obtenerUsuarios();
+  //  console.log(" ta funcionando : "+ this.usuariosservice.obtenerUsuarios());
    }
 
   ngOnInit(): void {
   }
 
+public verlista(): void{
+  if (this.usuariosservice.listusers==true){
+    this.usuariosservice.listusers=false;
+    console.log("ta funcionando el boton");
+  }
+  else{
+    this.usuariosservice.listusers=true;
+    console.log("estaaaaaaaaa funcionando el boton");
 
+
+  }
+}
 
 }

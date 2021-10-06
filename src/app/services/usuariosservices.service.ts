@@ -6,21 +6,20 @@ import { Usuarios } from '../interfaces/usuarios';
   providedIn: 'root'
 })
 export class UsuariosService {
-
+listusers:boolean=false;
   usuarios: Usuarios[] = [];
-    // carrito:string[] = [];
+  // carrito:string[] = [];
     constructor(private http: HttpClient) {
-        this.obtenerUsuarios();
+        
     }
 
-    public obtenerUsuarios() {
-        this.http.get('http://localhost:8080/api/usuarios/listar').subscribe((resp: any) => {
-            this.usuarios = resp.usuarios;
-            
-            
-            
-        });
+    url = 'http://localhost:8080/api/usuarios/listar';
+
+    getUsuarios(){
+        return this.http.get<Usuarios[]>(this.url);
     }
+
+  
 
 
 }
