@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegistroComponent } from './registro/registro.component';
-import { GeneralusuariosComponent } from './generalusuarios/generalusuarios.component';
-import { GeneralcursosComponent } from './generalcursos/generalcursos.component';
 import {LoginComponent } from './login/login.component';
+import { GeneralComponent } from './general/general.component';
+import { UsuariosModule } from '../Usuarios/Usuarios.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+//import { AgregarComponent } from '../Usuarios/agregar/agregar.component';
 
 
 
@@ -11,17 +13,19 @@ import {LoginComponent } from './login/login.component';
   declarations: [
     LoginComponent,
     RegistroComponent,
-    GeneralusuariosComponent,
-    GeneralcursosComponent
+    GeneralComponent,
+    //AgregarComponent
+
   ],
   exports: [
     RegistroComponent,
-    GeneralusuariosComponent,
-    GeneralcursosComponent,
-    LoginComponent
+    LoginComponent,
+    GeneralComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule, 
+    UsuariosModule, 
+    HttpClientModule
   ]
 })
 export class PaginasModule { }

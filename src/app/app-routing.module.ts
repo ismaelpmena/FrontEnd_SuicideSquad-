@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GeneralcursosComponent } from './paginas/generalcursos/generalcursos.component';
+import { GeneralComponent } from './paginas/general/general.component';
 import { LoginComponent } from './paginas/login/login.component';
-import { GeneralusuariosComponent } from './paginas/generalusuarios/generalusuarios.component';
+import { RegistroComponent } from './paginas/registro/registro.component';
 
 const routes: Routes = [
 
   //{ path:'', component: ProductoComponent },
   { path:'', component: LoginComponent },
-  { path:'Generalusuarios', component: GeneralusuariosComponent },
-  { path:'Generalcursos', component: GeneralcursosComponent },
+  { path:'General', component: GeneralComponent },
   { path:'login', component: LoginComponent },
+  { path:'registro', component: RegistroComponent },
 
 ];
 

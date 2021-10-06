@@ -5,7 +5,7 @@ import { Usuarios } from '../interfaces/usuarios';
 @Injectable({
   providedIn: 'root'
 })
-export class UsuariosservicesService {
+export class UsuariosService {
 
   usuarios: Usuarios[] = [];
     // carrito:string[] = [];
@@ -13,8 +13,8 @@ export class UsuariosservicesService {
         this.obtenerUsuarios();
     }
 
-    private obtenerUsuarios() {
-        this.http.get('../assets/data/productoHombre.json').subscribe((resp: any) => {
+    public obtenerUsuarios() {
+        this.http.get('http://localhost:8080/api/usuarios/listar').subscribe((resp: any) => {
             this.usuarios = resp.usuarios;
             
             

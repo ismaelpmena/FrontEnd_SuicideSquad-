@@ -8,7 +8,6 @@ import { Cursos } from '../interfaces/cursos';
 export class CursosService {
 
   cursos: Cursos[] = [];
-    // carrito:string[] = [];
     constructor(private http: HttpClient) {
         this.obtenerCursos();
     }
@@ -16,8 +15,6 @@ export class CursosService {
     private obtenerCursos() {
         this.http.get('../assets/data/productoHombre.json').subscribe((resp: any) => {
             this.cursos = resp.cursos;
-            
-            
             
         });
     }
