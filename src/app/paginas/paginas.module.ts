@@ -6,27 +6,26 @@ import { GeneralComponent } from './general/general.component';
 import { UsuariosModule } from '../Usuarios/Usuarios.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CursosModule } from '../Cursos/cursos.module';
-//import { AgregarComponent } from '../Usuarios/agregar/agregar.component';
-
-
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegistroComponent,
     GeneralComponent,
-
+    
   ],
   exports: [
     RegistroComponent,
     LoginComponent,
     GeneralComponent,
+    
   ],
   imports: [
     CommonModule, 
     UsuariosModule, 
     CursosModule, 
-    HttpClientModule
+    HttpClientModule,
+    
   ]
 })
 export class PaginasModule { }

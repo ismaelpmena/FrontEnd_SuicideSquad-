@@ -7,7 +7,7 @@ import { Cursos } from '../interfaces/cursos';
 })
 export class CursosService {
   listcursos:boolean=false;
-  //addcursos:boolean=false;
+  addcursos:boolean=false;
   cursos: Cursos[] = [];
 
   

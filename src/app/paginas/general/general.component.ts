@@ -49,5 +49,15 @@ public verlistacursos():void{
       console.log("estaaaaaaaaa funcionando el boton");
     }
   }
+  public verAgregarcursos(): void{
+    if (this.cursosservice.addcursos==true){
+      this.cursosservice.addcursos=false;
+      console.log("ta funcionando el boton");
+    }
+    else{
+      this.cursosservice.addcursos=true;
+      console.log("estaaaaaaaaa funcionando el boton");
+    }
+  }
 
 }

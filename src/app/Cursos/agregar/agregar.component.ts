@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CursosService } from 'src/app/services/cursos.service';
 
 @Component({
   selector: 'app-agregarcursos',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public cursos:CursosService) { }
 
   ngOnInit(): void {
   }
