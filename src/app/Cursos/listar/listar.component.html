@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="card">
+    <div class="card" *ngIf="serviceCursos.listcursos">
 
         <div class="card-header">
 
@@ -7,24 +7,23 @@
 
         </div>
         <div class="card-body">
-
             <table class="table table-hover">
                 <thead>
-                    <tr>
+                    <tr class="text-center">
                         <th>Id</th>
                         <th>Nombre</th>
-                        <th>Cant Alumnos</th>
+                        <th>Cantidad</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="text-center">
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let curso of cursos" class="text-center">
+                        <td>{{curso.id}}</td>
+                        <td>{{curso.nombre}}</td>
+                        <td>{{curso.cantidadAlumnos}}</td>
                         <td>
                             <button class="btn btn-warning">Editar</button>
-                            <button class="btn btn-danger">Eliminar</button>
+                            <!-- <button (click)="eliminar(curso)" class="btn btn-danger">Eliminar</button> -->
 
                         </td>
 

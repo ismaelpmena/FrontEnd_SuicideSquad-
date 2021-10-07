@@ -1,15 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CursosService } from 'src/app/services/cursos.service';
+import {Cursos}  from 'src/app/interfaces/cursos';
+
 
 @Component({
   selector: 'app-listar',
   templateUrl: './listar.component.html',
   styleUrls: ['./listar.component.css']
 })
-export class ListarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+export class ListarComponent  {
+  cursos:Cursos[]=[];
+  constructor(public serviceCursos:CursosService, private router:Router, private http:HttpClient) { 
+    this.serviceCursos.getCursos().subscribe(data=>{
+    this.cursos = data;
+    });
   }
-
 }
+

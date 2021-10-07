@@ -7,7 +7,7 @@
                         Gestor de Cursos
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><button class="btn btn-primary"></button>consultar Cursos</li>
+                        <li class="list-group-item"><button class="btn btn-primary" (click)="verlistacursos()">Lista Cursos</button></li>
                         <li class="list-group-item">Agregar Cursos</li>
                     </ul>
                 </div>
@@ -21,7 +21,7 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><button class="btn btn-primary" (click)="verlista()">Listar Usuarios </button></li>
-                        <li class="list-group-item">Agregar Usuarios</li>
+                        <li class="list-group-item"><button class="btn btn-primary" (click)="verAgregar()">Agregar Usuarios </button></li>
                     </ul>
                 </div>
             </div>
@@ -29,6 +29,7 @@
     </div>
 
     <app-listar> </app-listar>
+    <app-agregar></app-agregar>
 
 
 

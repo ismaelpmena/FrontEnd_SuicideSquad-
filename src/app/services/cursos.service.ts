@@ -7,13 +7,22 @@ import { Cursos } from '../interfaces/cursos';
 })
 export class CursosService {
 
+  listcursos:boolean=false;
   cursos: Cursos[] = [];
     constructor(private http: HttpClient) {
         this.obtenerCursos();
     }
+    url = 'http://localhost:8080/api/cursos/listar';
+    url2= 'http://localhost:8080/api/cursos/eliminar';
 
+    getCursos(){
+      return this.http.get<Cursos[]>(this.url);
+  }
+  eliminar(usuarios:Cursos){
+    return this.http.delete<Cursos>(this.url2+"/"+usuarios.id);
+}
     private obtenerCursos() {
-        this.http.get('../assets/data/productoHombre.json').subscribe((resp: any) => {
+        this.http.get('http://localhost:8080/api/cursos/listar').subscribe((resp: any) => {
             this.cursos = resp.cursos;
             
         });
