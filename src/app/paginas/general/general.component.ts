@@ -37,12 +37,8 @@ public verlistacursos():void{
   else{
     this.cursosservice.listcursos=true;
     console.log("funciona el apretar el boton");
-
-
   }
 }
-
-
   public verAgregar(): void{
     if (this.usuariosservice.addusers==true){
       this.usuariosservice.addusers=false;

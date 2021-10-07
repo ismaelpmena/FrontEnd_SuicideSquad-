@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CursosService } from 'src/app/services/cursos.service';
+
+import {CursosService} from 'src/app/services/cursos.service';
 import {Cursos}  from 'src/app/interfaces/cursos';
 
 
 @Component({
-  selector: 'app-listar',
+  selector: 'app-listarcursos',
   templateUrl: './listar.component.html',
   styleUrls: ['./listar.component.css']
 })

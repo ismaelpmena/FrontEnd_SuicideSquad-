@@ -6,11 +6,11 @@ import { Usuarios } from '../interfaces/usuarios';
   providedIn: 'root'
 })
 export class UsuariosService {
-listusers:boolean=false;
-addusers:boolean=false;
-
+  listusers:boolean=false;
+  addusers:boolean=false;
   usuarios: Usuarios[] = [];
   // carrito:string[] = [];
+
     constructor(private http: HttpClient) {
         
     }
@@ -24,7 +24,7 @@ addusers:boolean=false;
 
     eliminar(usuarios:Usuarios){
       return this.http.delete<Usuarios>(this.url2+"/"+usuarios.id);
-  }
+    }
   
     
 

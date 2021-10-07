@@ -4,7 +4,8 @@ import { RegistroComponent } from './registro/registro.component';
 import {LoginComponent } from './login/login.component';
 import { GeneralComponent } from './general/general.component';
 import { UsuariosModule } from '../Usuarios/Usuarios.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { CursosModule } from '../Cursos/cursos.module';
 //import { AgregarComponent } from '../Usuarios/agregar/agregar.component';
 
 
@@ -14,7 +15,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegistroComponent,
     GeneralComponent,
-    //AgregarComponent
 
   ],
   exports: [
@@ -25,6 +25,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule, 
     UsuariosModule, 
+    CursosModule, 
     HttpClientModule
   ]
 })

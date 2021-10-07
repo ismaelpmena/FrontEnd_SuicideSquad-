@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuariosservices.service';
 
 @Component({
-  selector: 'app-agregar',
+  selector: 'app-agregarusuarios',
   templateUrl: './agregar.component.html',
   styleUrls: ['./agregar.component.css']
 })
