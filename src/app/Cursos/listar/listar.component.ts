@@ -10,12 +10,17 @@ import {Cursos}  from 'src/app/interfaces/cursos';
   templateUrl: './listar.component.html',
   styleUrls: ['./listar.component.css']
 })
-export class ListarComponent  {
+
+export class ListarComponent implements OnInit {
   cursos:Cursos[]=[];
   constructor(public serviceCursos:CursosService, private router:Router, private http:HttpClient) { 
     this.serviceCursos.getCursos().subscribe(data=>{
     this.cursos = data;
     });
+  }
+
+  ngOnInit(): void {
+
   }
 }
 

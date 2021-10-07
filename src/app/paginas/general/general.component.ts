@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuariosservices.service';
-import { CursosService } from '../../services/cursos.service';
+import { CursosService } from 'src/app/services/cursos.service';
 
 @Component({
   selector: 'app-general',
@@ -32,9 +32,12 @@ public verlista(): void{
 public verlistacursos():void{
   if(this.cursosservice.listcursos==true){
     this.cursosservice.listcursos=false;
+    console.log("funciona volver a apretar el apretar el boton");
   }
   else{
     this.cursosservice.listcursos=true;
+    console.log("funciona el apretar el boton");
+
 
   }
 }
