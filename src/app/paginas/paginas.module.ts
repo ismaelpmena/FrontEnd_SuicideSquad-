@@ -6,6 +6,8 @@ import { GeneralComponent } from './general/general.component';
 import { UsuariosModule } from '../Usuarios/Usuarios.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CursosModule } from '../Cursos/cursos.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,9 @@ import { CursosModule } from '../Cursos/cursos.module';
     UsuariosModule, 
     CursosModule, 
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+
     
   ]
 })

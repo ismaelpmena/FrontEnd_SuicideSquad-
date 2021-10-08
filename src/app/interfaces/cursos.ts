@@ -1,5 +1,5 @@
 export interface Cursos {
-    id:number;
+    id?:number;
     nombre: string;
     cantidadAlumnos: number;
 }

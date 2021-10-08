@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="card" *ngIf="serviceCursos.listcursos">
+    <div class="card m-3" *ngIf="serviceCursos.listcursos">
         <div class="card-header">
             <h3>Cursos</h3>
         </div>
@@ -20,7 +20,7 @@
                         <td>{{curso.cantidadAlumnos}}</td>
                         <td>
                             <button class="btn btn-warning">Editar</button>
-                            <!-- <button (click)="eliminar(curso)" class="btn btn-danger">Eliminar</button> -->
+                            <button (click)="eliminar(curso.id)" class="btn btn-danger">Eliminar</button>
                         </td>
                     </tr>
                 </tbody>

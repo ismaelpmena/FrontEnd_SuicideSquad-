@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {Router} from '@angular/router';
 
 import {UsuariosService}  from 'src/app/services/usuariosservices.service';
@@ -14,30 +13,42 @@ import {Usuarios}  from 'src/app/interfaces/usuarios';
 
 export class ListarComponent implements OnInit {
   usuarios:Usuarios[]=[];
+
+  @Output() propagar = new EventEmitter<Usuarios>();
+
   constructor(public serviceU:UsuariosService, private router:Router) { 
-    
     this.serviceU.getUsuarios().subscribe(data=>{
-    this.usuarios = data;
-    })
+      this.usuarios = data;
+      })
   }
 
   ngOnInit(): void {
   }
 
-  editar(id:number):void
+  editar(usuario:Usuarios):void
   {
-    localStorage.setItem("UsuarioId",id.toString());
-    this.router.navigate(["editar"]);
+    this.verEditar()
+    console.log(usuario);
+    this.serviceU.usuarioEdit = usuario;
   }
 
-  eliminar(id:number){
-    this.serviceU.eliminar(id).subscribe(()=>{
+  eliminar(id:number|undefined){
+    this.serviceU.eliminar(Number(id)).subscribe(()=>{
       this.serviceU.getUsuarios().subscribe(data=>{
         this.usuarios = data;
       })
-
     });
+  }
 
+  public verEditar(): void{
+    if (this.serviceU.editusers==true){
+      this.serviceU.editusers=false;
+      console.log("ta funcionando el boton");
+    }
+    else{
+      this.serviceU.editusers=true;
+      console.log("estaaaaaaaaa funcionando el boton");
+    }
   }
 
 }

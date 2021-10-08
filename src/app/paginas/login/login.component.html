@@ -1,14 +1,13 @@
 <div class="container">
-    <form>
+    <form [formGroup]="LoginForm" (ngSubmit)="ingresar()">
         <h1>Bienvenido a Everis Academy</h1>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">usuario</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputEmail1" class="form-label">Correo de usuario</label>
+            <input type="text" name="email" formControlName="email" type="text" class="form-control" placeholder="E-mail">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-
+            <input name="contrasena" formControlName="contrasena" type="password" class="form-control" placeholder="Contraseña">
         </div>
         <div class="g-recaptcha" data-sitekey="6Lc6MrMcAAAAAOMYRNKQJTZ5KGNLP6DPtsu3T-Nq"></div>
         <button type="submit" class="btn btn-primary">Ingresar</button>

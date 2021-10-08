@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { GraficoComponent } from './grafico/grafico.component';
+import { ConstruccionComponent } from './construccion/construccion.component';
 
 
 @NgModule({
@@ -10,11 +11,13 @@ import { GraficoComponent } from './grafico/grafico.component';
     FooterComponent,
     HeaderComponent,
     GraficoComponent,
+    ConstruccionComponent,
   ],
   exports: [
     FooterComponent,
     HeaderComponent,
     GraficoComponent,
+    ConstruccionComponent
   ],
   imports: [
     CommonModule,

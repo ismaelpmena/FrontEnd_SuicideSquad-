@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AgregarComponent } from './agregar/agregar.component';
 import { EditarComponent } from './editar/editar.component';
 import { ListarComponent } from './listar/listar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
@@ -21,6 +21,7 @@ import { AppRoutingModule } from '../app-routing.module';
     CommonModule,
     FormsModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class UsuariosModule { }

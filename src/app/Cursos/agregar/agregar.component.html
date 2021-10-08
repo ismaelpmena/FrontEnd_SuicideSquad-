@@ -1,11 +1,23 @@
-<form *ngIf="cursos.addcursos">
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Nombre del Curso</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+<div class="container">
+    <div class="card m-3" *ngIf="cursoService.addcursos">
+        <div class="card-header">
+            <h3>Agregar Curso</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="cursoForm" (ngSubmit)="insertarcurso()">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Nombre Del curso</span>
+                    <input name="nombre" formControlName="nombre" type="text" placeholder="desarrollo en java" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">cantidad de Alumnos</span>
+                    <input name="cantidad" formControlName="cantidadAlumnos" type="text" class="form-control" placeholder="cantidad">
+                    <span class="input-group-text" id="basic-addon1">✗</span>
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="submit">Agregar curso</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Cantidad de alumnos</label>
-        <input type="email" class="form-control" id="exampleInputEmail1">
-    </div>
-    <button type="submit" class="btn btn-primary">Agregar Curso</button>
-</form>
+</div>

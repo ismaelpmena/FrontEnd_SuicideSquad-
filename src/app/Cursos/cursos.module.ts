@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AgregarComponent } from './agregar/agregar.component';
 import { EditarComponent } from './editar/editar.component';
 import { ListarComponent } from './listar/listar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -18,7 +20,10 @@ import { ListarComponent } from './listar/listar.component';
     ListarComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
 })
 export class CursosModule { }

@@ -4,25 +4,25 @@
             <h3>Agregar Usuario</h3>
         </div>
         <div class="card-body">
-            <form (ngSubmit)="insertar()">
+            <form [formGroup]="usuarioForm" (ngSubmit)="insertar()">
                 <div class="input-group mb-3">
                     <span class="input-group-text">Nombres y apellidos</span>
-                    <input [(ngModel)]="usuario.nombre" name="usuario.nombre" type="text" placeholder="Juan Pedro" class="form-control">
-                    <input [(ngModel)]="usuario.apellido" name="usuario.apellido" type="text" placeholder="Navarrete Gómez" class="form-control">
+                    <input name="nombre" formControlName="nombre" type="text" placeholder="Juan Pedro" class="form-control">
+                    <input name="apellido" formControlName="apellido" type="text" placeholder="Navarrete Gómez" class="form-control">
                 </div>
                 <div class="input-group mb-3">
-                    <input [(ngModel)]="usuario.rut" name="usuario.rut" type="text" class="form-control" placeholder="Rut">
+                    <input name="rut" formControlName="rut" type="text" class="form-control" placeholder="Rut">
                     <span class="input-group-text" id="basic-addon1">✗</span>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text" [(ngModel)]="usuario.email" name="usuario.email" type="text" class="form-control" placeholder="E-mail">
+                    <input type="text" name="email" formControlName="email" type="text" class="form-control" placeholder="E-mail">
                 </div>
                 <div class="input-group mb-3">
-                    <input [(ngModel)]="usuario.password" name="usuario.password" type="password" class="form-control" placeholder="Contraseña">
+                    <input name="contrasena" formControlName="contrasena" type="password" class="form-control" placeholder="Contraseña">
                     <span class="input-group-text" id="basic-addon1">✓</span>
                 </div>
                 <div class="input-group mb-3">
-                    <input [(ngModel)]="password2" name="password2" type="password" class="form-control" placeholder="Repetir Contraseña">
+                    <input name="contrasena2" formControlName="contrasena2" type="password" class="form-control" placeholder="Repetir Contraseña">
                     <span class="input-group-text" id="basic-addon1">✗</span>
                 </div>
                 <div class="d-grid gap-2">

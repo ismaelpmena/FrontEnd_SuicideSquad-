@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ConstruccionComponent } from './compartida/construccion/construccion.component';
 import { GeneralComponent } from './paginas/general/general.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { RegistroComponent } from './paginas/registro/registro.component';
@@ -13,6 +14,8 @@ const routes: Routes = [
   { path:'login', component: LoginComponent },
   { path:'registro', component: RegistroComponent },
   { path:'editar', component: EditarComponent },
+  {path: 'construccion', component: ConstruccionComponent },
+  {path: '**', redirectTo: 'construccion'}
 
 ];
 

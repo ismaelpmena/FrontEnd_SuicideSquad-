@@ -18,6 +18,7 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@rxweb/types": "^1.0.7",
     "@swimlane/ngx-charts": "^19.0.1",
     "@swimlane/ngx-datatable": "^20.0.0",
     "bootstrap": "^5.1.1",

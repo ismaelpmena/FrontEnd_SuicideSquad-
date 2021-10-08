@@ -14,6 +14,7 @@ import {Cursos}  from 'src/app/interfaces/cursos';
 
 export class ListarComponent implements OnInit {
   cursos:Cursos[]=[];
+
   constructor(public serviceCursos:CursosService, private router:Router, private http:HttpClient) { 
     this.serviceCursos.getCursos().subscribe(data=>{
     this.cursos = data;
@@ -23,5 +24,16 @@ export class ListarComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+
+  eliminar(id:number|undefined){
+    this.serviceCursos.eliminar(Number(id)).subscribe(()=>{
+      this.serviceCursos.getCursos().subscribe(data=>{
+        this.cursos = data;
+      })
+    });
+  }
+
+
 }
 

@@ -1,8 +1,8 @@
 export interface Usuarios {
-    id:number;
+    id?:number;
     rut: string;
     nombre: string;
     apellido: string;
     email: string;
-    password: string;
+    contrasena: string;
 }

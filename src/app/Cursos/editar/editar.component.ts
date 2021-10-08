@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-editar',
+  selector: 'app-editarcurso',
   templateUrl: './editar.component.html',
   styleUrls: ['./editar.component.css']
 })
