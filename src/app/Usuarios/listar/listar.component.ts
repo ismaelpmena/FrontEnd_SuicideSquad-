@@ -43,11 +43,9 @@ export class ListarComponent implements OnInit {
   public verEditar(): void{
     if (this.serviceU.editusers==true){
       this.serviceU.editusers=false;
-      console.log("ta funcionando el boton");
     }
     else{
       this.serviceU.editusers=true;
-      console.log("estaaaaaaaaa funcionando el boton");
     }
   }
 

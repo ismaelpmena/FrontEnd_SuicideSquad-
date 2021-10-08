@@ -11,6 +11,7 @@ export class UsuariosService {
   editusers:boolean=false;
   usuarios: Usuarios[] = [];
   usuarioEdit!:Usuarios;
+  errorInf = "Ok";
   // carrito:string[] = [];
 
     constructor(private http: HttpClient) {
@@ -34,14 +35,20 @@ export class UsuariosService {
     updateUsuario(usuario:Usuarios)
     { 
       let usuarioId;
-      console.log(usuario);
       console.log(this.http.put<Usuarios>('http://localhost:8080/api/usuarios/modificar',usuario).subscribe(data => usuarioId = data.id));
-      console.log("El usuario se guardo con ID",usuarioId);
     }
 
     verificar(usuario:Usuarios)
     { 
-      return this.http.post<Usuarios>('http://localhost:8080/api/usuarios/verificar',usuario).subscribe();
+      this.http.post<Usuarios>('http://localhost:8080/api/usuarios/verificar',usuario).subscribe({
+          next: data => {
+            console.log("LOGIN COMPLETO")
+          },
+          error: error => {
+            console.log("Usuario no existe")
+          }
+      })
+      return "Ok";
     }
 
     saveUsuario(usuario:Usuarios)
@@ -49,9 +56,7 @@ export class UsuariosService {
       return new Promise(resolve => {
         setTimeout(() => {
           let usuarioId;
-          console.log(usuario);
           console.log(this.http.put<Usuarios>('http://localhost:8080/api/usuarios/guardar',usuario).subscribe(data => usuarioId = data.id));
-          console.log("El usuario se guardo con ID",usuarioId);
         }, 2000);
       });
     }

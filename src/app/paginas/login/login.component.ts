@@ -36,12 +36,7 @@ export class LoginComponent{
       email: this.LoginForm.value.email,
       contrasena: this.LoginForm.value.contrasena
     }
-    console.log("\n\n\n")
-    console.log(this.us.verificar(usuario))
-    console.log("\n\n\n")
-
-    console.log(this.us.verificar(usuario))
-      if (this.us.verificar(usuario)) {
+      if (this.us.verificar(usuario)=="Ok") {
         this.router.navigate(['/General']);
       }
   }
