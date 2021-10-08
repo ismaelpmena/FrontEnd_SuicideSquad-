@@ -14,20 +14,30 @@ import {Usuarios}  from 'src/app/interfaces/usuarios';
 
 export class ListarComponent implements OnInit {
   usuarios:Usuarios[]=[];
-  constructor(public serviceU:UsuariosService, private router:Router, private http:HttpClient) { 
+  constructor(public serviceU:UsuariosService, private router:Router) { 
+    
     this.serviceU.getUsuarios().subscribe(data=>{
     this.usuarios = data;
-    }) 
+    })
   }
 
   ngOnInit(): void {
   }
 
-  eliminar(usuarios:Usuarios){
-    this.serviceU.eliminar(usuarios).subscribe(data=>{
-    this.usuarios = this.usuarios.filter(u=>u!==usuarios);
-    alert("usuario eliminado..")
-    })
+  editar(id:number):void
+  {
+    localStorage.setItem("UsuarioId",id.toString());
+    this.router.navigate(["editar"]);
+  }
+
+  eliminar(id:number){
+    this.serviceU.eliminar(id).subscribe(()=>{
+      this.serviceU.getUsuarios().subscribe(data=>{
+        this.usuarios = data;
+      })
+
+    });
+
   }
 
 }

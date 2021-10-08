@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="card" *ngIf="serviceU.listusers">
+    <div class="card m-3" *ngIf="serviceU.listusers">
         <div class="card-header">
             <h3>Usuarios</h3>
         </div>
@@ -23,8 +23,8 @@
                         <td>{{usuario.apellido}}</td>
                         <td>{{usuario.email}}</td>
                         <td>
-                            <button class="btn btn-warning">Editar</button>
-                            <button (click)="eliminar(usuario)" class="btn btn-danger">Eliminar</button>
+                            <button (click)="editar(usuario.id)" class="btn btn-warning">Editar</button>
+                            <button (click)="eliminar(usuario.id)" class="btn btn-danger">Eliminar</button>
 
                         </td>
 
